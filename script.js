@@ -35,13 +35,13 @@ function simulateCache(blockSize, mmSize, mmSizeUnit, cacheSize, cacheSizeUnit, 
     // Convert sizes to blocks if necessary
     const mmSizeBlocks = mmSizeUnit === 'words' ? Math.ceil(mmSize / blockSize) : mmSize
     const cacheSizeBlocks = cacheSizeUnit === 'words' ? Math.ceil(cacheSize / blockSize) : cacheSize
-
     // Initialize cache
     let cache = new Array(cacheSizeBlocks).fill(null);
     let cacheAge = new Array(cacheSizeBlocks).fill(Infinity);
     let cacheHits = 0;
     let cacheMisses = 0;
 
+    document.getElementById('cacheSnapshot').append("Memory         Cache");
     for(let access of programFlow) {
         const block = programFlowUnit === 'words' ? Math.floor(access / blockSize) : access;
 
@@ -73,10 +73,10 @@ function simulateCache(blockSize, mmSize, mmSizeUnit, cacheSize, cacheSizeUnit, 
     }
 
     // Calculate results for the outpu
-    const missPenalty = cacheAccessTime + memoryAccessTime + cacheAccessTime        // should be good
-    const hitRate = cacheHits / programFlow.length                                  // should be good
-    const avgAccessTime = (hitRate * cacheAccessTime) + (1 - hitRate) * missPenalty // something wrong with test case
-    const totalAccessTime = cacheHits * cacheAccessTime + cacheMisses * missPenalty // something wrong with test case
+    const missPenalty = cacheAccessTime + memoryAccessTime*blockSize + cacheAccessTime 
+    const hitRate = cacheHits / programFlow.length 
+    const avgAccessTime = (hitRate * cacheAccessTime) + (1 - hitRate) * missPenalty 
+    const totalAccessTime = cacheHits * 2 * cacheAccessTime + cacheMisses * missPenalty + cacheMisses * cacheAccessTime
 
     // Prepare cache snapshot
     const cacheSnapshot = cache.map((block, index) => 
