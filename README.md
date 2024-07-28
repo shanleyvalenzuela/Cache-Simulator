@@ -53,10 +53,6 @@ Users can download the results by clicking the "Download Results" button. A text
 - **styles.css:** The CSS file for styling the application.
 - **script.js:** The JavaScript file containing the logic for the cache simulation.
 
-## Contact
-
-For any questions or feedback, please contact Group 4 at [group4@example.com](mailto:group4@example.com).
-
 ---
 
 By using this Cache Simulator, you agree to the terms and conditions specified in the LICENSE file.
