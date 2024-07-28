@@ -54,5 +54,3 @@ Users can download the results by clicking the "Download Results" button. A text
 - **script.js:** The JavaScript file containing the logic for the cache simulation.
 
 ---
-
-By using this Cache Simulator, you agree to the terms and conditions specified in the LICENSE file.
