@@ -33,7 +33,7 @@ For offline use, open `index.html`.
 
 ### Simulation Process
 
-The simulation process is displayed in real-time, showing the detailed operations as the program flow is processed through the cache. This includes cache hits, cache misses, and the current state of the cache memory.
+The simulation process is displayed, showing the detailed operations as the program flow is processed through the cache. This includes cache hits, cache misses, and the current state of the cache memory.
 
 ## Results
 
@@ -42,4 +42,21 @@ After the simulation, the results section will display:
 - **Number of Cache Hits:** Total cache hits during the simulation.
 - **Number of Cache Misses:** Total cache misses during the simulation.
 - **Miss Penalty:** The time penalty for a cache miss in nanoseconds.
-- **Average Memory Access Time:** The average time to acc
+- **Average Memory Access Time:** The average time to access memory in nanoseconds.
+- **Total Memory Access Time:** The total time spent on memory access during the simulation.
+- **Snapshot of Cache Memory:** The values in the cache after accessing the sequence of blocks.
+Users can download the results by clicking the "Download Results" button. A text file containing the results will automatically be downloaded.
+
+## Files
+
+- **index.html:** The main HTML file containing the structure of the application.
+- **styles.css:** The CSS file for styling the application.
+- **script.js:** The JavaScript file containing the logic for the cache simulation.
+
+## Contact
+
+For any questions or feedback, please contact Group 4 at [group4@example.com](mailto:group4@example.com).
+
+---
+
+By using this Cache Simulator, you agree to the terms and conditions specified in the LICENSE file.
